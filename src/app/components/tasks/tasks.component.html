@@ -1,0 +1,39 @@
+<div class="task_container bg-violet-700 p-8 text-white rounded-lg">
+  <h2 class="text-4xl my-4 text-center">Tasks</h2>
+  <button
+    routerLink="/form"
+    class="p-4 bg-green-300 text-violet-700 my-4 font-bold rounded-md mx-4"
+  >
+    Add Task
+  </button>
+  @if(task.length<=0){
+  <p>No Task Available</p>
+  }@else {
+  <ul
+    class="grid grid-cols-1 sm:grid-flow-col-2 md:grid-cols-3 lg:grid-flow-col-4"
+  >
+    @for (item of task; track $index) {
+    <li class="rounded-lg bg-white text-black m-4 p-4 min-w-40">
+      <h3 class="font-bold text-2xl capitalize">{{ item.title }}</h3>
+      <p class="text-lg py-2 first-letter:uppercase">{{ item.description }}</p>
+      <p class="font-semibold capitalize">{{ item.status }}</p>
+
+      <div class="btn pt-6">
+        <button
+          class="bg-green-300 text-violet-700 font-bold px-4 py-2 mx-2 rounded-md"
+          (click)="EditTask(item._id)"
+        >
+          Edit
+        </button>
+        <button
+          class="bg-red-600 text-white font-bold px-4 py-2 mx-2 rounded-md"
+          (click)="DeleteTask(item._id)"
+        >
+          Delete
+        </button>
+      </div>
+    </li>
+    }
+  </ul>
+  }
+</div>
