@@ -17,7 +17,6 @@ export class TodoService {
   Tasks = signal<Task[]>([]);
   task = signal({});
   taskformdata: any;
-  addingTask = signal(false);
 
   constructor(private http: HttpClient, private fb: FormBuilder) {}
 
