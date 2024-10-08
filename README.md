@@ -1,27 +1,55 @@
-# TodoApp
+# To-Do List Application
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.2.
+## Table of contents
 
-## Development server
+- [To-Do List Application](#to-do-list-application)
+  - [Table of contents](#table-of-contents)
+  - [Overview](#overview)
+    - [The Features](#the-features)
+    - [Screenshot](#screenshot)
+    - [Links](#links)
+  - [My process](#my-process)
+    - [Prerequisites](#prerequisites)
+    - [Installation](#installation)
+    - [Running the Application](#running-the-application)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Overview
 
-## Code scaffolding
+- This is a simple To-Do List application built using Angular. It supports Create, Read, Update, and Delete (CRUD) operations.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### The Features
 
-## Build
+- Add new tasks
+- View all tasks
+- Update existing tasks
+- Delete tasks
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Screenshot
 
-## Running unit tests
+![](./screenshot.jpg)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Links
 
-## Running end-to-end tests
+- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## My process
 
-## Further help
+### Prerequisites
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- Angular CLI
+
+### Installation
+
+1.Clone the repository: //git clone https://github.com/yourusername/todo-list-mean.git
+
+- cd todo-list-mean
+
+1. Install frontend dependencies:
+   - cd ../frontend
+   - npm install
+
+### Running the Application
+
+1. Start the frontend server:
+   - cd ../frontend
+   - ng serve
