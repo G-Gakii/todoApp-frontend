@@ -1,5 +1,4 @@
 <form
-  action=""
   class="bg-violet-700 text-white py-8 px-16 rounded-lg"
   [formGroup]="taskForm"
 >
@@ -40,10 +39,11 @@
 
   <div class="btn pt-12 pb-4 flex justify-between items-center">
     <button
-      class="bg-green-300 text-violet-700 p-4 rounded-lg font-bold"
+      class="bg-green-300 text-violet-700 p-4 rounded-lg font-bold capitalize"
       (click)="AddTask()"
+      type="submit"
     >
-      Add Task
+      @if (addingTask) {adding...}@else { Add Task }
     </button>
 
     <button

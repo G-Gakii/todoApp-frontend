@@ -3,4 +3,5 @@ export interface Task {
   title: string;
   description?: string;
   status: string;
+  isloading?: boolean;
 }

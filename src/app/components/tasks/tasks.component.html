@@ -6,13 +6,13 @@
   >
     Add Task
   </button>
-  @if(task.length<=0){
+  @if(tasks.length<=0){
   <p>No Task Available</p>
   }@else {
   <ul
     class="grid grid-cols-1 sm:grid-flow-col-2 md:grid-cols-3 lg:grid-flow-col-4"
   >
-    @for (item of task; track $index) {
+    @for (item of tasks; track $index) {
     <li class="rounded-lg bg-white text-black m-4 p-4 min-w-40">
       <h3 class="font-bold text-2xl capitalize">{{ item.title }}</h3>
       <p class="text-lg py-2 first-letter:uppercase">{{ item.description }}</p>
@@ -29,7 +29,7 @@
           class="bg-red-600 text-white font-bold px-4 py-2 mx-2 rounded-md"
           (click)="DeleteTask(item._id)"
         >
-          Delete
+          @if(item.isloading){ Deleting... }@else {Delete}
         </button>
       </div>
     </li>

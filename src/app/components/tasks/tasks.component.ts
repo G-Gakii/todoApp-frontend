@@ -15,44 +15,42 @@ import { title } from 'process';
 })
 export class TasksComponent implements OnInit {
   TaskForm!: FormGroup;
-  task: Task[] = [];
+  tasks: Task[] = [];
+  deleteTask: any;
+  // isLoading = false;
 
-  loadData: any;
   constructor(private service: TodoService, private router: Router) {}
   ngOnInit(): void {
-    this.getTasks();
-  }
-
-  getTasks() {
-    this.service.getTasks().subscribe({
-      next: (response: Task[]) => {
-        this.service.Tasks.set(response);
-        this.task = this.service.Tasks();
-      },
-      error: (error) => {
-        console.log(error);
-      },
-    });
+    this.service.getTasks();
+    this.tasks = this.service.Tasks();
   }
 
   DeleteTask(id: string) {
+    for (let i = 0; i < this.tasks.length; i++) {
+      this.tasks[i].isloading = false;
+      if (this.tasks[i]._id === id) {
+        this.tasks[i].isloading = true;
+      }
+    }
+
     this.service.DeleteTask(id).subscribe({
       next: () => {
         console.log('deleted successfully');
+        // this.isLoading = false;
 
-        this.getTasks();
+        this.tasks = this.tasks.filter((task) => task._id !== id);
+        this.service.Tasks.set(this.tasks);
       },
 
       error: (error) => {
         console.log(error);
+        // this.isLoading = false;
       },
     });
   }
   EditTask(id: string) {
     this.service.getTask(id).subscribe({
-      next: (response) => {
-        console.log(response._id);
-      },
+      next: (response) => {},
       error: (error) => {
         console.error(error);
       },

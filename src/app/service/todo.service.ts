@@ -13,11 +13,11 @@ import {
   providedIn: 'root',
 })
 export class TodoService {
-  // private apiUrl = 'http://localhost:3000/api/task';
   private apiUrl = 'https://todoapp-backend-mewv.onrender.com/api/task';
   Tasks = signal<Task[]>([]);
   task = signal({});
   taskformdata: any;
+  addingTask = signal(false);
 
   constructor(private http: HttpClient, private fb: FormBuilder) {}
 
@@ -29,8 +29,12 @@ export class TodoService {
     });
   }
 
-  getTasks(): Observable<Task[]> {
-    return this.http.get<Task[]>(this.apiUrl);
+  getTasks() {
+    this.http.get<Task[]>(this.apiUrl).subscribe({
+      next: (res: Task[]) => {
+        this.Tasks.set(res);
+      },
+    });
   }
   getTask(id: string): Observable<Task> {
     return this.http.get<Task>(`${this.apiUrl}/${id}`);
@@ -44,5 +48,15 @@ export class TodoService {
   DeleteTask(id: string) {
     return this.http.delete(`${this.apiUrl}/${id}`);
   }
-  
+
+  // deleteTask = (id: string) => {
+  //   this.http.delete(`${this.apiUrl}/${id}`).subscribe({
+  //     next: (res) => {
+  //       console.log(`deleted successfuly ${res}`);
+  //     },
+  //     error: (error) => {
+  //       console.log(error);
+  //     },
+  //   });
+  // };
 }

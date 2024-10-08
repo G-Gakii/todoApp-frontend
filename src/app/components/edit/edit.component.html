@@ -1,5 +1,4 @@
 <form
-  action=""
   [formGroup]="taskForm"
   class="bg-violet-700 text-white py-8 px-16 rounded-lg"
 >
@@ -41,9 +40,10 @@
   <div class="btn pt-12 pb-4 flex justify-between items-center">
     <button
       class="bg-green-300 text-violet-700 p-4 rounded-lg font-bold"
+      type="submit"
       (click)="UpdateTask()"
     >
-      Edit Task
+      @if(isloading){ Editing... }@else { Edit Task }
     </button>
 
     <button

@@ -10,14 +10,15 @@ export const routes: Routes = [
   },
   {
     path: 'form',
-    component: TaskFormComponent,
+    loadComponent: () =>
+      import('./components/task-form/task-form.component').then(
+        (c) => c.TaskFormComponent
+      ),
   },
-  {
-    path: 'form/:id',
-    component: TaskFormComponent,
-  },
+
   {
     path: 'edit/:id',
-    component: EditComponent,
+    loadComponent: () =>
+      import('./components/edit/edit.component').then((c) => c.EditComponent),
   },
 ];
