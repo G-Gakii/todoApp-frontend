@@ -26,11 +26,15 @@
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![todo](https://github.com/G-Gakii/todoApp-frontend/blob/main/public/screenshot/one.png)
+
+![todo](https://github.com/G-Gakii/todoApp-frontend/blob/main/public/screenshot/two.png)
+
+![todo](https://github.com/G-Gakii/todoApp-frontend/blob/main/public/screenshot/three.png)
 
 ### Links
 
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: (https://todo-app-frontend-two-xi.vercel.app/)
 
 ## My process
 
